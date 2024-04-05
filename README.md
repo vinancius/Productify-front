@@ -6,8 +6,6 @@ O projeto productify-front é um aplicação web com angular que interage com a 
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento.
 
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
-
 ## Construído com
 
 De que tecnológias que você precisa instalar?
