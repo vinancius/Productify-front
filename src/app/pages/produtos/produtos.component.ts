@@ -9,7 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { Produto } from '../../models/produto.model';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 export interface PeriodicElement {
   name: string;
@@ -67,6 +67,9 @@ export class ProdutosComponent {
   }
 
   formatarDataEHora(data: string): string {
+    const date = new Date(data);
+    // Ajustar o fuso horário para Brasília (UTC-3)
+    date.setTime(date.getTime() - 3 * 60 * 60 * 1000);
     return this.datePipe.transform(data, 'dd/MM/yyyy HH:mm:ss') || '';
   }
 
