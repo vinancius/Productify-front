@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Produto } from '../../models/produto.model'
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,8 +13,8 @@ export class ProdutosServiceService {
     this.apiUrl = 'http://localhost:8080/api/produtos';
   }
 
-  public listarProdutos(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(this.apiUrl);
+  public listarProdutos(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
   }
 
   public listarProdutoById(id: number): Observable<any> {
