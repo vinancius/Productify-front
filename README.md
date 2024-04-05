@@ -39,16 +39,21 @@ docker-compose up -d
 # Telas
 
 * Tela inicial:
+
 ![alt text](./prints/image.png)
 
 * Tela dos Produtos:
+
 ![alt text](./prints/image-1.png)
 
 * Tela cadastrado de produto:
+
 ![alt text](./prints/image-2.png)
 
 * Tela de Detalhe do Produto:
+
 ![alt text](./prints/image-3.png)
 
 * Tela Editar produto
+
 ![alt text](./prints/image-4.png)
