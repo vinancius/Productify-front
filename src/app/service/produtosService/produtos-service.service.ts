@@ -26,7 +26,7 @@ export class ProdutosServiceService {
   }
 
   public atualizarProduto(produto: any, id: string): Observable<any> {
-    return this.http.patch(`${this.apiUrl}/${id}`, produto)
+    return this.http.put(`${this.apiUrl}/${id}`, produto)
   }
 
   public deletarProduto(id: number): Observable<any> {
