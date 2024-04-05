@@ -14,9 +14,9 @@ De que tecnológias que você precisa instalar?
 
 * [Docker](https://www.docker.com/get-started/) - Gerenciar componentes de contêineres
 * [Angular 17](https://angular.io/quick-start) - Framework web usado
-* [Node v18.13.0](https://nodejs.org/dist/v18.13.0/node-v18.13.0-x64.msi) - Interpretador utilizado
-
-### 🔧 Instalação e Execução
+* [Node v18.13.0](https://nodejs.org/dist/v18.13.0/node-v18.13.0-x64.msi) - Interpretador utilizado 
+* [Visual Studio](https://visualstudio.microsoft.com/pt-br/) - IDE utilizada
+### Instalação e Execução
 
 O projeto pode ser inicializado de duas formas:
 
@@ -31,7 +31,7 @@ ng serve
 Localmente com docker:
 
 ```
-docker build -t productify-back .
+docker build -t productify-front .
 
 docker-compose up -d 
 ```
