@@ -18,7 +18,7 @@ De que tecnológias que você precisa instalar?
 * [Visual Studio](https://visualstudio.microsoft.com/pt-br/) - IDE utilizada
 ### Instalação e Execução
 
-O projeto pode ser inicializado de duas formas:
+O projeto pode ser inicializado de duas formas, na pasta raiz do projeto executar os seguintes comandos:
 
 Localmente sem o container:
 
