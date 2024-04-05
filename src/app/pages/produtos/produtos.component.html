@@ -4,6 +4,14 @@
 
 <button (click)="adicionarProduto()" mat-raised-button>Adicionar Produto</button>
 
+<mat-form-field>
+  <mat-label>Pesquisar</mat-label>
+  <input matInput [(ngModel)]="pesquisa">
+</mat-form-field>
+
+<button (click)="listarProdutos()" mat-raised-button>Buscar</button>
+
+
 <table mat-table [dataSource]="listaPaginada.itens" class="mat-elevation-z8">
     <!-- ID Column -->
     <ng-container matColumnDef="id">
@@ -58,5 +66,7 @@
               [pageIndex]="listaPaginada.page - 1"
               [pageSize]="listaPaginada.totalPages"
               [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Selecione a página">
+              aria-label="Selecione a página"
+              (page)="paginatoEvent($event)"
+              >
 </mat-paginator>

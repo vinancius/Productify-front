@@ -17,6 +17,13 @@ export class ProdutosServiceService {
     return this.http.get<any>(this.apiUrl);
   }
 
+  public listarProdutosFilters(parametros: any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}`,
+    { 
+      params: parametros
+    });
+  }
+
   public listarProdutoById(id: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`); 
   }

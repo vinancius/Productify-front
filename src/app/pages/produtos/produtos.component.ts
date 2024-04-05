@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { ProdutosServiceService } from '../../service/produtosService/produtos-service.service';
 import { ListaPaginada } from '../../models/listaPaginada.model';
@@ -34,10 +34,11 @@ export interface PeriodicElement {
 })
 export class ProdutosComponent {
   displayedColumns: string[] = ['id', 'nome', 'preco', 'dataDeCriacao', 'acoes'];
+  pesquisa: string = "";
 
   listaPaginada: ListaPaginada = {
     itens: [],
-    page: 0,
+    page: 1,
     total: 0,
     totalPages: 5,
   };
@@ -52,8 +53,33 @@ export class ProdutosComponent {
     this.listarProdutos();
   }
 
-  async listarProdutos() {
-    this.produtosService.listarProdutos().subscribe(data => {
+  paginatoEvent(event?: PageEvent) {
+    
+    if(event) {
+      this.listaPaginada.page = event.pageIndex + 1;
+      this.listaPaginada.totalPages = event.pageSize;
+      this.listarProdutos();
+    }
+
+    return event;
+  }
+  
+  listarProdutos() {
+    let parametros: { page?: number, pageSize?: number, filtro?: string } = {};
+
+    if(this.listaPaginada.page >= 0) {
+      parametros.page = this.listaPaginada.page;
+    }
+
+    if(this.listaPaginada.totalPages > 0) {
+      parametros.pageSize = this.listaPaginada.totalPages;
+    }
+
+    if(this.pesquisa !== "") {
+      parametros.filtro = this.pesquisa;
+    }
+    
+    this.produtosService.listarProdutosFilters(parametros).subscribe(data => {
       this.listaPaginada = <ListaPaginada>(data);
     })
   }
