@@ -45,12 +45,14 @@ export class ProdutosComponent {
   constructor (
     private router: Router, 
     private produtosService: ProdutosServiceService, 
-    private datePipe: DatePipe) 
-  {
-
-  }
+    private datePipe: DatePipe
+  ) {}
 
   ngOnInit(): void {
+    this.listarProdutos();
+  }
+
+  async listarProdutos() {
     this.produtosService.listarProdutos().subscribe(data => {
       this.listaPaginada = <ListaPaginada>(data);
     })
@@ -69,7 +71,14 @@ export class ProdutosComponent {
   }
 
   deletarProduto(item: Produto) {
-
+    this.produtosService.deletarProduto(item.id).subscribe(
+      response => {
+        this.listarProdutos();
+      },
+      error => {
+        alert(`Ocorreu um problema ao excluir produto ${item.nome}`);
+      }
+    )
   }
 
   visualizarProduto(item: Produto) {
