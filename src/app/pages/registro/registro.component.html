@@ -1,15 +1,18 @@
-<div>
+<div class="container">
+    <div class="voltar">
+        <button class="botao-voltar" (click)="voltar()">
+            Voltar
+        </button>
+    </div>
+    
     @if (editMode) {
-        <h3>Editar Produto</h3>
+        <h1 class="titulo">Editar Produto</h1>
     }
 
     @if (!editMode) {
-        <h3>Cadastrar Produto</h3>
+        <h1 class="titulo">Cadastrar Produto</h1>
     }
-
-    <button mat-icon-button (click)="voltar()">
-        Voltar
-    </button>
+    
 
     <div class="form">
         <mat-form-field>
@@ -26,13 +29,13 @@
         </mat-form-field>
 
         @if (!editMode) {
-            <button mat-icon-button (click)="adicionarProduto()">
+            <button class="registro" mat-icon-button (click)="adicionarProduto()">
                 Cadastrar
             </button>
         }
 
         @if (editMode) {
-            <button mat-icon-button (click)="editarProduto()">
+            <button class="registro" mat-icon-button (click)="editarProduto()">
                 Editar
             </button>
         }

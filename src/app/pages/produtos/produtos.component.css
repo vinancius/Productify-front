@@ -1,0 +1,42 @@
+
+.tableLabel {
+    margin-top: 35px;
+}
+
+.pesquisa-field {
+    height: 75px;
+}
+
+.filtro {
+    margin-top: 12px;
+    width: 322px
+}
+
+.buscar {
+    position: relative;
+    margin-left: 20px;
+    height: 30px;
+    width: 60px;
+    margin-right: 30px;
+    border-radius: 4px;
+}
+
+.botao-adicionar {
+    display: flex;
+    justify-content: right; 
+}
+
+.adicionar{
+    width: 176.53px;
+    height: 40px;
+    gap: 0px;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 15.85px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+    background-color: #238692;
+}

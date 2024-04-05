@@ -1,17 +1,23 @@
-<div>
-    <h3>Detalhar Produto</h3>
+<div class="container">
 
-    <button mat-icon-button (click)="voltar()">
-        Voltar
-    </button>
+    <div class="voltar">
+        <button class="botao-voltar" (click)="voltar()">
+            Voltar
+        </button>
+    </div>
 
-    <mat-list>
-        <mat-list-item>Nome: {{produto.nome}}</mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>Preço: R${{produto.preco}}</mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>Data de criação: {{formatarDataEHora(produto.dataDeCriacao)}}</mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>Descrição: {{produto.descricao}}</mat-list-item>
-      </mat-list>
+    <h3 class="titulo">Detalhar Produto</h3>
+
+    <div>
+        <mat-list>
+            <mat-list-item><strong>Nome: </strong>{{produto.nome}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><strong>Preço:</strong> R${{produto.preco}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><strong>Data de criação:</strong> {{formatarDataEHora(produto.dataDeCriacao)}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><strong>Descrição:</strong> {{produto.descricao}}</mat-list-item>
+        </mat-list>
+    </div>
+        
 </div>    

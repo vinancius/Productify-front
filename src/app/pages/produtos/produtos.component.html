@@ -1,18 +1,21 @@
-<h1 id="tableLabel">Produtos</h1>
+<div class="container">
+  <h1 class="tableLabel">Tabela de Produtos</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+  <div class="filtro">
+    <mat-form-field class="pesquisa-field">
+      <mat-label>Pesquisar</mat-label>
+      <input matInput [(ngModel)]="pesquisa">
+    </mat-form-field>
 
-<button (click)="adicionarProduto()" mat-raised-button>Adicionar Produto</button>
+    <button class="buscar" (click)="listarProdutos()" mat-raised-button>Buscar</button>
+  </div>
+  
 
-<mat-form-field>
-  <mat-label>Pesquisar</mat-label>
-  <input matInput [(ngModel)]="pesquisa">
-</mat-form-field>
-
-<button (click)="listarProdutos()" mat-raised-button>Buscar</button>
-
-
-<table mat-table [dataSource]="listaPaginada.itens" class="mat-elevation-z8">
+  <div class="botao-adicionar" >
+    <button class="adicionar" (click)="adicionarProduto()">Adicionar Produto</button>
+  </div>
+  
+  <table mat-table [dataSource]="listaPaginada.itens" class="mat-elevation-z9">
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -60,13 +63,13 @@
         Não existe produtos cadastrados!
       </td>
     </tr>
-</table>
+  </table>
 
-<mat-paginator [length]="listaPaginada.total"
-              [pageIndex]="listaPaginada.page - 1"
-              [pageSize]="listaPaginada.totalPages"
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Selecione a página"
-              (page)="paginatoEvent($event)"
-              >
-</mat-paginator>
+  <mat-paginator [length]="listaPaginada.total"
+                [pageIndex]="listaPaginada.page - 1"
+                [pageSize]="listaPaginada.totalPages"
+                [pageSizeOptions]="[5, 10, 25, 100]"
+                aria-label="Selecione a página"
+                (page)="paginatoEvent($event)">
+  </mat-paginator>
+</div>

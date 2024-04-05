@@ -1,0 +1,21 @@
+.titulo {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 10px;
+    font-size: 40px;
+}
+
+.voltar {
+    display: flex;
+    justify-content: right; 
+}
+
+.botao-voltar {
+    width: 80px;
+    margin-top: 40px;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0px;
+    font-size: 13px;
+    font-weight: 600;
+}
