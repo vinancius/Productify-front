@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+
+  productifyfront:
+    container_name: productify-front
+    image: productify-front
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
