@@ -1,27 +1,54 @@
-# ProductifyFront
+# Productify-Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
+O projeto productify-front é um aplicação web com angular que interage com a api [productify-api](https://github.com/vinancius/Productify-back). Juntas elas formam um sistema de gerencia de um catálogo de produtos.
 
-## Development server
+## Introdução
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento.
 
-## Code scaffolding
+Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Construído com
 
-## Build
+De que tecnológias que você precisa instalar?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* [Docker](https://www.docker.com/get-started/) - Gerenciar componentes de contêineres
+* [Angular 17](https://angular.io/quick-start) - Framework web usado
+* [Node v18.13.0](https://nodejs.org/dist/v18.13.0/node-v18.13.0-x64.msi) - Interpretador utilizado
 
-## Running unit tests
+### 🔧 Instalação e Execução
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O projeto pode ser inicializado de duas formas:
 
-## Running end-to-end tests
+Localmente sem o container:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+npm i
 
-## Further help
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Localmente com docker:
+
+```
+docker build -t productify-back .
+
+docker-compose up -d 
+```
+
+# Telas
+
+##Tela inicial:
+![alt text](./prints/image.png)
+
+##Tela dos Produtos:
+![alt text](./prints/image-1.png)
+
+##Tela cadastrado de produto:
+![alt text](./prints/image-2.png)
+
+##Tela de Detalhe do Produto:
+![alt text](./prints/image-3.png)
+
+##Tela Editar produto
+![alt text](./prints/image-4.png)
